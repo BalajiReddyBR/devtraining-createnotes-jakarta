@@ -5,25 +5,25 @@
         <css/>
         <draft>false</draft>
         <dynamic_title_structure/>
-        <id>notes_home</id>
+        <id>incident_table_br</id>
         <internal>false</internal>
         <public>false</public>
         <roles/>
         <short_description/>
         <sys_class_name>sp_page</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-04-10 19:08:04</sys_created_on>
+        <sys_created_by>BalajiReddy</sys_created_by>
+        <sys_created_on>2018-03-10 05:58:52</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>a61956e1094232007f44e1046c8ff68b</sys_id>
+        <sys_id>5a77e7f40f781300e57a65ba32050e41</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>notes_home</sys_name>
+        <sys_name>incident_table_br</sys_name>
         <sys_package display_value="CreateNotes" source="x_snc_createnotes">df5fd9a5090232007f44e1046c8ff69f</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="CreateNotes">df5fd9a5090232007f44e1046c8ff69f</sys_scope>
-        <sys_update_name>sp_page_a61956e1094232007f44e1046c8ff68b</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-04-10 19:08:04</sys_updated_on>
-        <title>CreateNotes Home</title>
+        <sys_update_name>sp_page_5a77e7f40f781300e57a65ba32050e41</sys_update_name>
+        <sys_updated_by>BalajiReddy</sys_updated_by>
+        <sys_updated_on>2018-03-10 05:58:52</sys_updated_on>
+        <title>Incident Table BR - Test Page</title>
     </sp_page>
 </record_update>

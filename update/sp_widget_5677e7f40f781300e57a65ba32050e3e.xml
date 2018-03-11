@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+    /*widget controller */
+    var c = this;
+    c.data.loading = true;
+    $scope.server.update().then(function(){
+        c.data.loading = false;
+    })
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>incident_table_br</id>
+        <internal>false</internal>
+        <link/>
+        <name>Incident Table BR</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    /* populate the 'data' object */
+    /* e.g., data.table = $sp.getValue('table'); */
+
+    if(input){
+        //define the variable to hold our list
+        data.list = [];
+        //Query the table
+        var gr = new GlideRecord('incident');
+        gr.addQuery('active', true);
+        gr.query()
+				data.count = gr.getRowCount();
+        while (gr.next()) {
+            //load values into object
+            var record_obj = {};
+            record_obj.number = gr.number.getDisplayValue();
+            record_obj.short_description = gr.short_description.getDisplayValue();
+            record_obj.priority = gr.priority.getDisplayValue();
+            record_obj.category = gr.category.getDisplayValue();
+            //add object to the list
+            data.list.push(record_obj);
+        }
+    }
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>BalajiReddy</sys_created_by>
+        <sys_created_on>2018-03-10 05:58:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5677e7f40f781300e57a65ba32050e3e</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Incident Table BR</sys_name>
+        <sys_package display_value="CreateNotes" source="x_snc_createnotes">df5fd9a5090232007f44e1046c8ff69f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="CreateNotes">df5fd9a5090232007f44e1046c8ff69f</sys_scope>
+        <sys_update_name>sp_widget_5677e7f40f781300e57a65ba32050e3e</sys_update_name>
+        <sys_updated_by>BalajiReddy</sys_updated_by>
+        <sys_updated_on>2018-03-10 06:23:10</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default">
+    <!-- your widget template -->
+  <p>There are {{data.count}} inidents</p>
+        <div class="panel-heading">
+        BR Incident List Widget
+        </div>
+        <div class="panel-body">
+            <span ng-if="c.data.loading"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+            <span class="sr-only">Loading\...</span>
+            </span>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in c.data.list">{{item.number}} - {{item.short_description}} -{{item.priority}}</li>
+            </ul>
+        </div>
+</div> ]]></template>
+    </sp_widget>
+</record_update>
